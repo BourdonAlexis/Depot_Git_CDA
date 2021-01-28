@@ -1,0 +1,40 @@
+DROP DATABASE IF EXISTS biblio;
+
+CREATE DATABASE biblio; 
+
+USE biblio; 
+
+
+
+CREATE TABLE client(
+   cli_num COUNTER,
+   cli_nom VARCHAR(30) NOT NULL,
+   cli_prenom VARCHAR(30),
+   PRIMARY KEY(cli_num)
+);
+
+CREATE TABLE commande(
+   com_num COUNTER,
+   com_date DATE NOT NULL,
+   com_montant DECIMAL(15,2),
+   cli_num INT NOT NULL,
+   PRIMARY KEY(com_num),
+   FOREIGN KEY(cli_num) REFERENCES client(cli_num)
+);
+
+CREATE TABLE article(
+   art_num COUNTER,
+   art_dsgt VARCHAR(60),
+   prix_unitaire DECIMAL(15,2) NOT NULL,
+   PRIMARY KEY(art_num)
+);
+
+CREATE TABLE se_compose_de(
+   com_num INT,
+   art_num INT,
+   quantite DECIMAL(15,0) NOT NULL,
+   taux_tva DECIMAL(15,2) NOT NULL,
+   PRIMARY KEY(com_num, art_num),
+   FOREIGN KEY(com_num) REFERENCES commande(com_num),
+   FOREIGN KEY(art_num) REFERENCES article(art_num)
+);
