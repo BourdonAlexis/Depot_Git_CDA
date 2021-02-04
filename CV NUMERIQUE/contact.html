@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">   
+    <title>contact</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body class="mx-5">
+  
+    <!--Entête-->
+   
+    <header>
+    </header>
+      <!--redirection sur la page-->
+    <nav class="navbar navbar-expand-lg bg-light navbar-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+        </button>   
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                 <a class="nav-link" href="index.html">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="cv.html">Curriculum Vitae</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <form class="form-inline d-none d-lg-block">
+            <input class="form-control mr-2" type="search" placeholder="votre promotion" aria-label="recherche"> 
+            <button type="button" class="btn btn-outline-success mr-2"><span>Recherche</span></button>
+        </form>
+    </nav>
+    <!--Formulaire de contact-->
+    <div>
+        <form action="destination.php" method="post" id="form1" onSubmit="return checkForm(this)">
+            <div>
+                <fieldset>
+                    <!--Email-->
+                    <br>
+                    <label for="email" >Email*  </label>
+                    <input class="form-control" type="email" name="email" id="email" placeholder="dave.loper@afpa.fr" size="25" maxlength="25"> 
+                </fieldset>
+            </div>
+            <br>
+            <div>
+                <fieldset>  
+                <!-- Votre question -->
+                    <label for="question">Votre question*  </label>
+                    <textarea class="form-control" id="question" name="question"></textarea>       
+                </fieldset>
+                <!--bouton envoie et annulation-->
+                <br>
+                <br>
+                <input type="submit" value="Envoyer" name="chp" class="btn btn-dark">
+                <input type="reset" value="Annuler" class="btn btn-dark">
+            </div>
+        </form>
+        <br>
+    </div>
+    <!--bas de page-->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar2">
+        <span class="navbar-toggler-icon"></span>
+        </button>   
+        <div class="collapse navbar-collapse" id="collapsibleNavbar2">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#mentionlégales" title="Allez aux mentions légales">Mentions légales</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#horaires" title="Consulter nos horaires">Horaires</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#plan" title="Consulter le plan du site">Plan du site</a>
+                </li>
+            </ul>
+        </div> 
+    </nav>  
+    <script src="assets/JS/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
