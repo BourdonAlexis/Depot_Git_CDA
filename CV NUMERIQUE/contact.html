@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" id="bgcarreauxhtml">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,79 +10,74 @@
 </head>
 <body class="mx-5">
   
-    <!--Entête-->
-   
     <header>
-    </header>
-      <!--redirection sur la page-->
-    <nav class="navbar navbar-expand-lg bg-light navbar-light">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-        <span class="navbar-toggler-icon"></span>
-        </button>   
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                 <a class="nav-link" href="index.html">Accueil</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="cv.html">Curriculum Vitae</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="#contact">Contact</a>
-                </li>
-            </ul>
-        </div>
-        <form class="form-inline d-none d-lg-block">
-            <input class="form-control mr-2" type="search" placeholder="votre promotion" aria-label="recherche"> 
-            <button type="button" class="btn btn-outline-success mr-2"><span>Recherche</span></button>
-        </form>
-    </nav>
+    
+        <!--redirection sur la page-->
+         <nav class="navbar navbar-expand-lg bg-dark navbar-dark ">
+             <a class="align-items-center mr-2 navbar-brand" href="contact.html#contact">
+                 <span class=" badge bg-primary">Contact</span>
+                 
+             </a>
+             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+             <span class="navbar-toggler-icon"></span>
+             </button>   
+             <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                 <ul class="navbar-nav">
+                     <li class="nav-item">
+                         <a class="nav-link" href="index.html">Accueil</a>
+                     </li>
+                     <li class="nav-item">
+                         <a class="nav-link" href="cv.html">CV</a>
+                     </li>
+                     <li class="nav-item">
+                         <a class="nav-link active" href="#contact">Contact</a>
+                     </li>
+                 </ul>
+             </div>
+         </nav>
+     </header>
     <!--Formulaire de contact-->
-    <div>
-        <form action="destination.php" method="post" id="form1" onSubmit="return checkForm(this)">
-            <div>
-                <fieldset>
-                    <!--Email-->
-                    <br>
-                    <label for="email" >Email*  </label>
-                    <input class="form-control" type="email" name="email" id="email" placeholder="dave.loper@afpa.fr" size="25" maxlength="25"> 
-                </fieldset>
-            </div>
-            <br>
-            <div>
-                <fieldset>  
-                <!-- Votre question -->
-                    <label for="question">Votre question*  </label>
-                    <textarea class="form-control" id="question" name="question"></textarea>       
-                </fieldset>
-                <!--bouton envoie et annulation-->
-                <br>
-                <br>
-                <input type="submit" value="Envoyer" name="chp" class="btn btn-dark">
-                <input type="reset" value="Annuler" class="btn btn-dark">
-            </div>
-        </form>
-        <br>
-    </div>
-    <!--bas de page-->
-    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar2">
-        <span class="navbar-toggler-icon"></span>
-        </button>   
-        <div class="collapse navbar-collapse" id="collapsibleNavbar2">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="#mentionlégales" title="Allez aux mentions légales">Mentions légales</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#horaires" title="Consulter nos horaires">Horaires</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#plan" title="Consulter le plan du site">Plan du site</a>
-                </li>
-            </ul>
-        </div> 
-    </nav>  
+    <form action="http://bienvu.net/script.php" method="POST" id="Inscription">
+                <!-- nom -->
+        <div class="form-group mx-5">
+        <label for="sujet">Nom*</label>
+        <input type="text" class="form-control" id="sujet" placeholder="Veuillez saisir votre sujet" name="sujet">
+        <span id="error_sujet"></span>
+        </div>
+
+
+            <!--email-->
+        <div class="form-group mx-5">
+        <label for="Email">Email*</label>
+        <input type="mail" class="form-control" id="email" placeholder="dave.loper@afpa.fr" name="Email">
+        <span id="error_email"></span>
+        </div>
+
+        <div class="form-group mx-5">
+
+            <label for="question">Votre question* :</label>
+
+            <textarea class="form-control" id="question" rows="2" name="question"></textarea>
+            <span id="error_question"></span>
+
+        </div>
+
+        <!--confirmation de l'envoie-->
+
+
+        <div class="form-group mx-5">
+
+        <input type="submit" name="envoyer" class="btn btn-dark" value="Envoyer">
+
+        <input type="reset" name="annuler" class="btn btn-dark" value="Annuler">
+
+        </div>
+
+    </form>
+     <!--bas de page-->
+     <footer>
+        <aside class="col-xl-12 col-lg-12 bg-dark" id="footer"></aside>
+    </footer>
     <script src="assets/JS/script.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
