@@ -1,12 +1,9 @@
 document.getElementById("Inscription").addEventListener("submit", function(e) {
-
     var erreur;
      var sujet = document.getElementById("sujet");
     var email = document.getElementById("email");
     var question = document.getElementById("question");
-    
-    
-    
+
                           //*******************  sujet  *****************************
     var error_sujet = document.getElementById("error_sujet");
     var filtre_sujet = new RegExp("^[a-zA-Z]+$");
@@ -30,11 +27,6 @@ document.getElementById("Inscription").addEventListener("submit", function(e) {
         error_sujet.innerHTML="";
         }
     }
-    
-    
-
-
-    
     
                         //********************* email ********************************
     
@@ -76,10 +68,7 @@ if (question.value==""){
     error_question.innerHTML="Veuillez poser votre question !!!!" .fontcolor("red"); 
     e.preventDefault();
     
-}
-
-
-    
+}  
     //*******************************confirmation d'envoie*******************
     
     var error_formulaire = document.getElementById("error_formulaire");
@@ -89,10 +78,8 @@ if (question.value==""){
     if (formulaire.checked==""){
     
         error_formulaire.innerHTML="Veuillez poser votre question svp !!!!" .fontcolor("red"); 
-        e.preventDefault();
-        
+        e.preventDefault();    
     }
-    
     });
     
     
