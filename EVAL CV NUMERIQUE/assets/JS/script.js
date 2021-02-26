@@ -1,15 +1,15 @@
 document.getElementById("Inscription").addEventListener("submit", function(e) {
-    var erreur;
-     var sujet = document.getElementById("sujet");
-    var email = document.getElementById("email");
-    var question = document.getElementById("question");
+    let erreur;
+    const sujet = document.getElementById("sujet");
+    const email = document.getElementById("email");
+    const question = document.getElementById("question");
 
                           //*******************  sujet  *****************************
-    var error_sujet = document.getElementById("error_sujet");
-    var filtre_sujet = new RegExp("^[a-zA-Z]+$");
+    const error_sujet = document.getElementById("error_sujet");
+    const filtre_sujet = new RegExp("^[a-zA-Z]+$");
     
     console.log("sujet :" + sujet.value);
-    var resultat = filtre_sujet.test( sujet.value);
+    const resultat = filtre_sujet.test( sujet.value);
     console.log(resultat);
     
     if (sujet.value==""){
@@ -18,7 +18,7 @@ document.getElementById("Inscription").addEventListener("submit", function(e) {
         e.preventDefault();
     }
     else{
-        if (resultat ==false) {
+        if (resultat ===false) {
             error_sujet.innerHTML="format incorrect" .fontcolor("red"); 
             e.preventDefault();
         }
@@ -30,11 +30,11 @@ document.getElementById("Inscription").addEventListener("submit", function(e) {
     
                         //********************* email ********************************
     
-    var error_email = document.getElementById("error_email");
-    var filtre_email = new RegExp("^[a-zA-Z0-9.-_]+[@]{1}[a-zA-Z0-9.-_]+[.]{1}[a-z]{2,4}$");
+    const error_email = document.getElementById("error_email");
+    const filtre_email = new RegExp("^[a-zA-Z0-9.-_]+[@]{1}[a-zA-Z0-9.-_]+[.]{1}[a-z]{2,4}$");
     
     console.log("email :" + email.value);
-    var resultat = filtre_email.test(email.value);
+    const resultat = filtre_email.test(email.value);
     console.log(resultat);
     
     
