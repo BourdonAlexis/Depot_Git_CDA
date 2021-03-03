@@ -24,7 +24,8 @@ $row = $result->fetch(PDO::FETCH_OBJ);
 <hr>
 
         <div>
-            <form action="script_update.php?disc_id=<?php echo $row->disc_id ?>" method="post" id="update">
+            <form action="script_update.php?disc_id=<?php echo $row->disc_id ?>" method="post" id="update" enctype="multipart/form-data">
+
                 <div>
                     <label for="title">Title  </label>
                     <input class="form-control"  type="text" id="title" name="title" value="<?php  echo $row->disc_title;?>" />

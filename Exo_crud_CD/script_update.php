@@ -12,15 +12,22 @@ $disc_label=$_POST['label'];
 $disc_price=$_POST['price'];
 $artist_name=$_POST['artist'];
 $artist_id=$_POST['artist_id'];
-$image = $_FILES['fichier']['name'];//récupère le nom de l'image
+$disc_picture = $_FILES['fichier']['name'];//récupère le nom de l'image
 
 
+//condition si il n'y a pas d'image
 
+if ($disc_picture === ""){
+    $requete = "SELECT disc_picture FROM disc where disc_id=".$disc_id;
+    $result = $db->query($requete);
+    $row = $result->fetch(PDO::FETCH_OBJ);
+    $disc_picture=$row->disc_picture;
+}
 
 // Construction de la requête UPDATE sans injection SQL
 try {
 
-    $requete = $db->prepare("UPDATE disc SET disc_title=:disc_title, disc_year=:disc_year,disc_genre=:disc_genre,disc_label=:disc_label,disc_price=:disc_price,disc_picture=".$image." where disc_id=".$disc_id);
+    $requete = $db->prepare("UPDATE disc SET disc_title=:disc_title, disc_year=:disc_year,disc_genre=:disc_genre,disc_label=:disc_label,disc_price=:disc_price,disc_picture=:disc_picture where disc_id=".$disc_id);
     $requete2 = $db->prepare("UPDATE artist SET artist_name=:artist_name where artist_id=".$artist_id);
 
 
@@ -29,6 +36,7 @@ try {
     $requete->bindValue(':disc_genre', $disc_genre, PDO::PARAM_STR);
     $requete->bindValue(':disc_label', $disc_label, PDO::PARAM_STR);
     $requete->bindValue(':disc_price', $disc_price, PDO::PARAM_STR);
+    $requete->bindValue(':disc_picture', $disc_picture, PDO::PARAM_STR);
     $requete2->bindValue(':artist_name', $artist_name, PDO::PARAM_STR);
 
 }
@@ -47,7 +55,7 @@ catch (Exception $e) {
 if (isset($_POST['upload'])) {
 
     // redirection de l'image
-    $target = "IMG/".basename($image);
+    $target = "IMG/".basename($disc_picture);
 
     // execution de la requête
 
@@ -64,7 +72,7 @@ if (isset($_POST['upload'])) {
 }
 
 // Redirection vers la page index.php
-//header("Location: index.php");
+header("Location: index.php");
 exit;
 
 ?>
