@@ -1,0 +1,40 @@
+    public function validUploadFile(string $fileName, string $action = 'insert')
+    {
+        $formErrors = [];
+        //Déclaration de la variable qui contient les extension autorisé pour l'upload d'image
+        $mimeTypeAllowed = ['image/jpeg', 'image/jpg', 'image/png']; // Type mime autorisé
+        //On vérifi que disc_title existe et que ce n'est pas vide
+        if (isset($_FILES[$fileName]) && !empty($_FILES[$fileName])) {
+            if ($_FILES[$fileName]['error'] === 0) {
+                //Si l'erreur est de 0 l'upload s'est bien passer si l'erreur on ne fais rien c'est qu'on a pas modifier la photo
+                $fInfo = new finfo(FILEINFO_MIME_TYPE);
+                //On recupére le type mime du fichier et on le stock dans la variable
+                $mimeTypeFile = $fInfo->file($_FILES[$fileName]['tmp_name']);
+                //On recherche dans le tableau le type mime autorisé avec le type mime récupéré
+                if (in_array($mimeTypeFile, $mimeTypeAllowed)) {
+                    if ($_FILES[$fileName]['size'] < 1800000) { // fichier max autorisé 1.80 mo
+                        //On renome le fichier par le nom du titre et on récupère l'extention du fichier avant de le déplacer dans le répertoire
+                        //$numberRandName = random_int(0,1000);
+                        //$letterRandName = substr(str_shuffle('ABCDEFGHIGKLMNOPQRSTUWXYZ'),0,1);
+                        //return $newFileName = $_POST[$fileName].$letterRandName.$numberRandName.strstr($_FILES[$fileName]['name'],'.');
+                        return $formErrors;
+                    }else {
+                        return $formErrors['file'] = "Taille du fichier limité à 1.8 Mo";
+                    }
+                }else{
+                    return $formErrors['file'] = "Format non autorisé";
+                }
+
+                //Sinon si c'est une erreur de type 4 Aucune image n'est présente
+            }elseif ($_FILES[$fileName]['error'] === 4 && $action === 'insert' || $action === '') {
+                return $formErrors['file'] = "Image requise";
+
+            }elseif ($_FILES[$fileName]['error'] === 4 && $action === 'update'){
+                return $formErrors;
+
+                //Sionon c'est une autre erreur
+            }else{
+                return $formErrors['file'] = "Une erreur est survenu lors du téléchargement";
+            }
+        }
+    }
