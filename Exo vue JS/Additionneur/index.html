@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calcul addition</title>
+    <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+</head>
+<body>
+<div id="app">
+<!--    Nombre 1-->
+    <input type="number" v-on:input="compte1 = parseFloat($event.target.value)"/>
+    <p>+</p>
+<!--    Nombre 2-->
+    <input type="number" v-on:input="compte2 = parseFloat($event.target.value)"/>
+
+<!--    Résultat-->
+    <p>=</p>
+    <h1><span style="color: orangered">{{compte1 + compte2}}</span></h1>
+    </div>
+
+
+<script>
+    new Vue({
+        el: '#app',
+        data:{
+            compte1: 0,
+            compte2: 0,
+        },
+    });
+</script>
+</body>
+</html>

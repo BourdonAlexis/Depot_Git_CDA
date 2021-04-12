@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculatrice</title>
+    <link href="src/calculatrice.css" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <div id="Fond">
+<!--            Barre affichage -->
+            <div class="Resultat">
+                <input type="text" readonly="readonly" v-model="resultat" />
+            </div>
+<!--            Touche  -->
+            <div id="touche">
+                <div v-on:click="touche(7)">7</div>
+                <div v-on:click="touche(8)">8</div>
+                <div v-on:click="touche(9)">9</div>
+                <div v-on:click="touche(4)">4</div>
+                <div v-on:click="touche(5)">5</div>
+                <div v-on:click="touche(6)">6</div>
+                <div v-on:click="touche(1)">1</div>
+                <div v-on:click="touche(2)">2</div>
+                <div v-on:click="touche(3)">3</div>
+                <div v-on:click="touche('*')" class="colortouche">*</div>
+                <div v-on:click="touche(0)">0</div>
+                <div v-on:click="reset()" class="colortouche">reset</div>
+                <div v-on:click="multiplication() " class="colortouche">=</div>
+                <div v-on:click="touche('-') " class="colortouche">-</div>
+                <div v-on:click="touche('+')" class="colortouche">+</div>
+                <div v-on:click="touche('/')" class="colortouche">/</div>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+    <script src="src/calculatrice.js"></script>
+</body>
+</html>
