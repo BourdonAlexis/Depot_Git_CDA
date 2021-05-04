@@ -5,6 +5,8 @@ import com.company.tools.Transcoder;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.sql.SQLOutput;
+
 public class test {
     //Methode decrypte
     @Test
@@ -24,10 +26,8 @@ public class test {
         Assertions.assertEquals("BYAPASBNBGAPASBGASBNASAFBHBGBNAHAJBNAZAFBLADBNAPASASAJAMAPADBNBJBJBJ",transcoder.crypte(msgDecode));
     }
 
-    //Menu
-    @Test
-    public void test(){
 
-    }
+
+
 
 }

@@ -3,7 +3,7 @@ package com.company.tools;
 
 import org.germain.tool.ManaBox;
 
-import java.security.Key;
+
 import java.sql.SQLOutput;
 import java.util.Map;
 import java.util.HashMap;
@@ -54,6 +54,12 @@ public class Transcoder {
 
 
     // Methode encodage
+
+    /**
+     *
+     * @param msg
+     * @return
+     */
     public String crypte(String msg){
         // sert à retirer tout les accents d'une chaine
       msg = StringUtils.stripAccents(msg);
@@ -72,6 +78,12 @@ public class Transcoder {
     }
 
     //methode decodage
+
+    /**
+     *
+     * @param msg
+     * @return
+     */
     public String decrypte(String msg) {
         //reprend le message crypté (haut dessus)
         StringBuffer msgResult = new StringBuffer();
