@@ -28,4 +28,4 @@ test {
     useJUnitPlatform()
 }
 
-mainClassName = "org.table.App"
+mainClassName = "org.client.App"

@@ -18,7 +18,7 @@ public class App extends Application {
     public void start(Stage primaryStage) throws IOException {
 
         //direction de la route vers fichier fxml
-        Parent root = FXMLLoader.load(getClass().getResource("/org/client/gui/Client.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/org/client/gui/Table.fxml"));
         //scene est égal à la route
         Scene scene = new Scene(root);
         //initialise la scene

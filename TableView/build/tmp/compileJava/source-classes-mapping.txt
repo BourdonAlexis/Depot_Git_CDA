@@ -1,4 +1,6 @@
 org/client/App.java
  org.client.App
-org/client/gui/Client.java
- org.client.gui.Client
+org/client/classe/Client.java
+ org.client.classe.Client
+org/client/gui/Table.java
+ org.client.gui.Table
